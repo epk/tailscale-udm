@@ -16,7 +16,7 @@ RUN curl -vsLo tailscale.tar.gz "https://pkgs.tailscale.com/${CHANNEL}/tailscale
 FROM alpine:3.11
 
 # Tailscaled depends on iptables (for now)
-RUN apk add --no-cache iptables ca-certificates
+RUN apk add --no-cache iptables iproute2 ca-certificates
 
 COPY --from=build /build/tailscale /usr/bin/
 COPY --from=build /build/tailscaled /usr/bin/
