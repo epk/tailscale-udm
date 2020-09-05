@@ -2,7 +2,7 @@ FROM alpine:3.11 AS build
 
 ARG CHANNEL=stable
 ARG VERSION=1.0.5
-ARG ARCH=arm
+ARG ARCH=arm64
 
 RUN mkdir /build
 WORKDIR /build
